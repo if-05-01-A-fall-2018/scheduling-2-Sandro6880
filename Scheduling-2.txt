@@ -1,0 +1,63 @@
+#Sandro Tadic
+#Scheduling 2 
+
+1.Multiple Queues:
+
+Runs| 1 | 2 | 3 |  4  |  5  |  6  |  7  |
+Q   | 1 | 2 | 4 |  8  | 16  |     |     |
+Acc | 1 | 3 | 7 |  15 | 31  |     |     |
+
+The process needs 5 swaps to finish/run again.
+
+2.Shortest Process Next:
+
+A: 1st 50 , 2nd 150 , 3rd 300, 4th 85
+B: 1st 300, 2nd 150 , 3rd 85 , 4th 50
+
+A: 4th estimate: 50/8 + 150/8 + 300/4 + 85/2
+A: 4th estimate: 6.25 + 18.75 + 75    + 42.5 = 142.5;
+
+B: 4th estimate: 300/8 + 150/8 + 85/4  + 50/2 
+B: 4th estimate: 37.5  + 18.75 + 21.25 + 25   = 102.5;
+
+Answer: It will take the B process, because it has a shorter 
+estimated Time, than the process A has.
+
+3.
+
+a) CPU-bound means: The CPU-bound process doesnt interact with user.
+   I/O-bound means: The I/O-bound process has a high interaction with 
+		    users/user-input.
+
+b) The I/O-bound process has a high priority in the Scheduler, because it 
+   needs to process user-input immediately, so that the user doesnt have to 
+   wait for a long period of time until his "Request" is accomplished.
+   For CPU-bound process its the reverse.
+   
+   If the Scheduler coudnt decide which process the I/O-bound or CPU-bound 
+   process were, then the user could wait for a long period of time until 
+   for example his/her/else Browser started. 
+
+4.
+			1st, 2nd, 3rd, 4th
+Periods P: 		50 , 100, 200, 250
+Seconds of CPU-Time: 	35 ,  20,  10, $x$
+
+R: (C1/P1)+(C2/P2)+(C3/P3)+(C4/P4) =< 1
+R: 35/50 + 20/100 + 10/200 + x/250 =< 1
+
+35/50 + 20/100 + 10/200 = 0.95;
+
+(numsolv for anyone who doesnt want to try diffrent values for themselve)
+
+Since it is a soft real-time-system,it is tolerable that it is "slower"
+
+if x is 12.5, then it would reach : 0.95 + 12.5/250 = 1
+so if x is 12.5 and the result is exactly 1 then it is still schedulable,
+thus the highest number for x is 12.5;
+
+
+
+
+
+
